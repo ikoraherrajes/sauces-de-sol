@@ -1,6 +1,18 @@
 // Año en footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// Slideshow del hero (transición cruzada + zoom Ken Burns)
+(function(){
+  const slides = Array.from(document.querySelectorAll('.hero__slide'));
+  if (slides.length < 2) return;
+  let i = 0;
+  setInterval(() => {
+    slides[i].classList.remove('is-active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('is-active');
+  }, 5500);
+})();
+
 // Nav: fondo al hacer scroll
 const nav = document.getElementById('nav');
 const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 60);

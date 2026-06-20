@@ -93,8 +93,15 @@ strong{color:var(--ink);font-weight:600}
 
 /* ===== Hero ===== */
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
-.hero__bg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.05);animation:slowzoom 18s ease-out forwards}
-@keyframes slowzoom{to{transform:scale(1)}}
+.hero__slides{position:absolute;inset:0;overflow:hidden}
+.hero__slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1);transition:opacity 1.8s ease, transform 7s ease-out;will-change:opacity,transform}
+.hero__slide.is-active{opacity:1;transform:scale(1.12)}
+.hero__slide:nth-child(2n){transform-origin:right center}
+.hero__slide:nth-child(3n){transform-origin:left bottom}
+@media (prefers-reduced-motion:reduce){
+  .hero__slide{transition:opacity 1.8s ease;transform:none}
+  .hero__slide.is-active{transform:none}
+}
 .hero__veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(58,50,42,.45) 0%,rgba(58,50,42,.2) 40%,rgba(58,50,42,.55) 100%)}
 .hero__content{position:relative;z-index:2;color:#fff;padding:0 1.2rem;max-width:760px}
 .hero__eyebrow{text-transform:uppercase;letter-spacing:.28em;font-size:.74rem;font-weight:700;color:#f3d9c2;margin-bottom:1rem}
