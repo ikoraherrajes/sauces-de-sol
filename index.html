@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sauces de Sol · Cabañas en Arroyo de los Patos, Traslasierra</title>
+  <meta name="description" content="Sauces de Sol — cabañas de descanso en Arroyo de los Patos, Traslasierra (Córdoba). A 50 metros del Río Los Sauces, con pileta, parque y vista a las sierras." />
+  <meta name="theme-color" content="#7c8a5a" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sauces de Sol · Cabañas en Traslasierra" />
+  <meta property="og:description" content="Tu lugar de descanso en Arroyo de los Patos. A 50 m del río, pileta, parque y vista a las sierras." />
+  <meta property="og:image" content="assets/img/hero-aerial.jpg" />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#inicio" class="brand">
+        <span class="brand__mark">🌿</span>
+        <span class="brand__name">Sauces de Sol</span>
+      </a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#descanso">El lugar</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#galeria">Galería</a>
+        <a href="#entorno">Entorno</a>
+        <a href="#reservar" class="nav__cta">Reservar</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg" style="background-image:url('assets/img/hero-aerial.jpg')"></div>
+    <div class="hero__veil"></div>
+    <div class="hero__content reveal">
+      <p class="hero__eyebrow">Arroyo de los Patos · Traslasierra · Córdoba</p>
+      <h1 class="hero__title">Sauces de Sol</h1>
+      <p class="hero__sub">Tu lugar de descanso entre el río y las sierras.</p>
+      <div class="hero__actions">
+        <a href="#reservar" class="btn btn--primary">Consultar disponibilidad</a>
+        <a href="#galeria" class="btn btn--ghost">Ver galería</a>
+      </div>
+    </div>
+    <a href="#descanso" class="hero__scroll" aria-label="Bajar">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- INTRO / DESCANSO -->
+  <section class="section intro" id="descanso">
+    <div class="intro__grid">
+      <div class="intro__text reveal">
+        <p class="kicker">El lugar</p>
+        <h2>Naturaleza, calma y comodidad en un mismo lugar</h2>
+        <p>
+          A solo <strong>50 metros del Río Los Sauces</strong>, Sauces de Sol es un pequeño
+          complejo de cabañas pensado para descansar de verdad. Despertás con la vista
+          imponente de las sierras, tomás el desayuno bajo la pérgola y pasás la siesta
+          a la sombra de los espinillos.
+        </p>
+        <p>
+          Parque amplio, pileta, asador y el silencio de Traslasierra. Un entorno
+          privilegiado para venir en pareja, en familia o con amigos —y sí, también
+          con tu mascota.
+        </p>
+      </div>
+      <ul class="intro__stats reveal">
+        <li><span class="stat__num">50 m</span><span class="stat__lbl">del Río Los Sauces</span></li>
+        <li><span class="stat__num">4</span><span class="stat__lbl">personas</span></li>
+        <li><span class="stat__num">5.0</span><span class="stat__lbl">★ valoración</span></li>
+        <li><span class="stat__num">🐾</span><span class="stat__lbl">pet friendly</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EXPERIENCIA / VIDEO -->
+  <section class="experience">
+    <video class="experience__video" autoplay muted loop playsinline poster="assets/img/sierras.jpg">
+      <source src="assets/video/drone.mp4" type="video/mp4" />
+    </video>
+    <div class="experience__veil"></div>
+    <div class="experience__caption reveal">
+      <p class="kicker kicker--light">El entorno</p>
+      <h2>Las sierras de Traslasierra, desde el aire</h2>
+      <p>Verde, agua y montaña hasta donde llega la vista.</p>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="section servicios" id="servicios">
+    <div class="section__head reveal">
+      <p class="kicker">Servicios</p>
+      <h2>Todo lo que necesitás para desconectar</h2>
+    </div>
+    <ul class="servicios__grid">
+      <li class="reveal"><span class="svc__ico">🏊</span><h3>Pileta</h3><p>Con reposeras y sombrilla para las tardes de verano.</p></li>
+      <li class="reveal"><span class="svc__ico">🔥</span><h3>Asador</h3><p>Para el clásico asado argentino al aire libre.</p></li>
+      <li class="reveal"><span class="svc__ico">🌳</span><h3>Parque</h3><p>Amplio, con árboles autóctonos y sombra natural.</p></li>
+      <li class="reveal"><span class="svc__ico">🍳</span><h3>Cocina equipada</h3><p>Lista para que cocines como en casa.</p></li>
+      <li class="reveal"><span class="svc__ico">🚗</span><h3>Cochera</h3><p>Estacionamiento dentro del predio.</p></li>
+      <li class="reveal"><span class="svc__ico">📺</span><h3>Televisión</h3><p>Para los momentos de descanso bajo techo.</p></li>
+      <li class="reveal"><span class="svc__ico">⛰️</span><h3>Vista a las sierras</h3><p>Pérgola y galería con vista abierta a la montaña.</p></li>
+      <li class="reveal"><span class="svc__ico">🐾</span><h3>Pet friendly</h3><p>Tu mascota es bienvenida.</p></li>
+    </ul>
+  </section>
+
+  <!-- GALERIA -->
+  <section class="section galeria" id="galeria">
+    <div class="section__head reveal">
+      <p class="kicker">Galería</p>
+      <h2>Un recorrido por Sauces de Sol</h2>
+    </div>
+    <div class="galeria__grid">
+      <figure class="g-item g-tall reveal" data-src="assets/img/g-arbol.jpg"><img src="assets/img/g-arbol.jpg" alt="Cabaña entre árboles autóctonos" loading="lazy" /></figure>
+      <figure class="g-item reveal" data-src="assets/img/g-pileta.jpg"><img src="assets/img/g-pileta.jpg" alt="Pileta con reposeras" loading="lazy" /></figure>
+      <figure class="g-item g-wide reveal" data-src="assets/img/aerial-complejo.jpg"><img src="assets/img/aerial-complejo.jpg" alt="Vista aérea del complejo" loading="lazy" /></figure>
+      <figure class="g-item reveal" data-src="assets/img/g-pergola.jpg"><img src="assets/img/g-pergola.jpg" alt="Pérgola con vista a las sierras" loading="lazy" /></figure>
+      <figure class="g-item g-tall reveal" data-src="assets/img/sierras.jpg"><img src="assets/img/sierras.jpg" alt="Vista aérea hacia las sierras" loading="lazy" /></figure>
+      <figure class="g-item reveal" data-src="assets/img/g-sombrilla.jpg"><img src="assets/img/g-sombrilla.jpg" alt="Sombrillas de paja en el parque" loading="lazy" /></figure>
+      <figure class="g-item reveal" data-src="assets/img/g-sol.jpg"><img src="assets/img/g-sol.jpg" alt="Atardecer en el parque" loading="lazy" /></figure>
+      <figure class="g-item g-wide reveal" data-src="assets/img/g-cerco.jpg"><img src="assets/img/g-cerco.jpg" alt="Galería de madera con vista al parque" loading="lazy" /></figure>
+    </div>
+  </section>
+
+  <!-- ENTORNO / UBICACION -->
+  <section class="section entorno" id="entorno">
+    <div class="entorno__grid">
+      <div class="entorno__text reveal">
+        <p class="kicker">Entorno</p>
+        <h2>En el corazón de Traslasierra</h2>
+        <p>
+          Arroyo de los Patos es un paraje tranquilo del Valle de Traslasierra, rodeado
+          de ríos de aguas claras y de las Sierras de Comechingones. El destino ideal
+          para caminar, refrescarse en el río y desconectar del ruido.
+        </p>
+        <ul class="entorno__list">
+          <li><span>🏞️</span> A 50 m del Río Los Sauces</li>
+          <li><span>⛰️</span> Vista directa a las sierras</li>
+          <li><span>🚙</span> Cerca de Mina Clavero y Nono</li>
+          <li><span>🌅</span> Paraje rural, ideal para descansar</li>
+        </ul>
+        <a class="btn btn--outline" href="https://www.google.com/maps/search/Arroyo+de+los+Patos+Traslasierra+C%C3%B3rdoba" target="_blank" rel="noopener">Ver en el mapa</a>
+      </div>
+      <div class="entorno__map reveal">
+        <iframe
+          title="Ubicación Arroyo de los Patos"
+          src="https://www.google.com/maps?q=Arroyo%20de%20los%20Patos%20Traslasierra%20C%C3%B3rdoba&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEÑAS -->
+  <section class="section resenas">
+    <div class="section__head reveal">
+      <p class="kicker">Reseñas</p>
+      <h2>Lo que dicen quienes ya vinieron</h2>
+      <p class="resenas__score">★★★★★ <strong>5.0</strong> · Anfitriona verificada</p>
+    </div>
+    <div class="resenas__grid">
+      <blockquote class="reveal">
+        <p>"Lugar impecable, muy limpio y la anfitriona súper atenta. La vista a las sierras y estar a pasos del río lo hacen único."</p>
+        <cite>— Huésped verificado</cite>
+      </blockquote>
+      <blockquote class="reveal">
+        <p>"Un descanso total. El parque, la pileta y la tranquilidad de Traslasierra son justo lo que buscábamos. Volvemos seguro."</p>
+        <cite>— Huésped verificado</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- RESERVAR / CONTACTO -->
+  <section class="section reservar" id="reservar">
+    <div class="reservar__card reveal">
+      <div class="reservar__info">
+        <p class="kicker">Reservas</p>
+        <h2>Reservá tu estadía en Sauces de Sol</h2>
+        <p>Escribinos y te pasamos disponibilidad y tarifas. Coordinamos todo de forma simple y personalizada.</p>
+        <ul class="reservar__terms">
+          <li><span>🕑</span> Check-in 14:00 · Check-out 10:00</li>
+          <li><span>🌙</span> Estadía mínima: 2 noches</li>
+          <li><span>💳</span> Seña del 50% · transferencia o efectivo</li>
+          <li><span>🐾</span> Se aceptan mascotas</li>
+        </ul>
+      </div>
+      <div class="reservar__actions">
+        <a class="btn btn--primary btn--lg" href="https://wa.me/5493544000000?text=Hola!%20Quiero%20consultar%20disponibilidad%20en%20Sauces%20de%20Sol" target="_blank" rel="noopener">
+          💬 Consultar por WhatsApp
+        </a>
+        <a class="btn btn--outline btn--lg" href="https://www.instagram.com/saucesdesol/" target="_blank" rel="noopener">
+          📷 @saucesdesol
+        </a>
+        <p class="reservar__note">Respondemos a la brevedad. ¡Te esperamos!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="brand__mark">🌿</span>
+        <span class="brand__name">Sauces de Sol</span>
+        <p>Cabañas de descanso · Arroyo de los Patos, Traslasierra, Córdoba.</p>
+      </div>
+      <div class="footer__links">
+        <a href="#descanso">El lugar</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#galeria">Galería</a>
+        <a href="#entorno">Entorno</a>
+        <a href="#reservar">Reservar</a>
+        <a href="https://www.instagram.com/saucesdesol/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <p class="footer__copy">© <span id="year"></span> Sauces de Sol · Hecho con cariño en Traslasierra.</p>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lbClose" aria-label="Cerrar">✕</button>
+    <button class="lightbox__nav lightbox__prev" id="lbPrev" aria-label="Anterior">‹</button>
+    <img class="lightbox__img" id="lbImg" src="" alt="" />
+    <button class="lightbox__nav lightbox__next" id="lbNext" aria-label="Siguiente">›</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
