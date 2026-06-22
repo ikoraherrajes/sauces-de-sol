@@ -94,15 +94,11 @@ strong{color:var(--ink);font-weight:600}
 /* ===== Hero ===== */
 .hero{position:relative;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
 .hero__slides{position:absolute;inset:0;overflow:hidden}
-.hero__slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.04);transition:opacity 3s ease;will-change:opacity,transform}
-.hero__slide.is-active{opacity:1;animation:kb-in 15s ease-in-out forwards}
-.hero__slide.is-active:nth-child(even){animation-name:kb-out}
-.hero__slide:nth-child(2n){transform-origin:right center}
-.hero__slide:nth-child(3n){transform-origin:left bottom}
-@keyframes kb-in{from{transform:scale(1.02)}to{transform:scale(1.17)}}
-@keyframes kb-out{from{transform:scale(1.17)}to{transform:scale(1.02)}}
+.hero__slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.16);transition:opacity 3s ease;will-change:transform}
+.hero__slide.is-active{opacity:1;animation:kb-breathe 26s ease-in-out infinite}
+@keyframes kb-breathe{0%,100%{transform:scale(1.16)}50%{transform:scale(1.32)}}
 @media (prefers-reduced-motion:reduce){
-  .hero__slide,.hero__slide.is-active{transition:opacity 3s ease;animation:none;transform:none}
+  .hero__slide,.hero__slide.is-active{transition:opacity 3s ease;animation:none;transform:scale(1.16)}
 }
 .hero__veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(58,50,42,.45) 0%,rgba(58,50,42,.2) 40%,rgba(58,50,42,.55) 100%)}
 .hero__content{position:relative;z-index:2;color:#fff;padding:0 1.2rem;max-width:760px}
