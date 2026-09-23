@@ -1,7 +1,7 @@
 // Año en footer
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Slideshow del hero (transición cruzada + zoom Ken Burns)
+// Slideshow del hero
 (function(){
   const slides = Array.from(document.querySelectorAll('.hero__slide'));
   if (slides.length < 2) return;
@@ -10,10 +10,10 @@ document.getElementById('year').textContent = new Date().getFullYear();
     slides[i].classList.remove('is-active');
     i = (i + 1) % slides.length;
     slides[i].classList.add('is-active');
-  }, 13000);
+  }, 8500);
 })();
 
-// Nav: fondo al hacer scroll
+// Nav scrolled state
 const nav = document.getElementById('nav');
 const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 60);
 onScroll();
@@ -38,10 +38,54 @@ const io = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
   });
-}, { threshold: 0.15 });
+}, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-// Lightbox de galería
+// Formulario -> WhatsApp
+(function(){
+  const form = document.getElementById('reservaForm');
+  if (!form) return;
+
+  const fmt = (iso) => {
+    if (!iso) return '';
+    const [y, m, d] = iso.split('-');
+    return `${d}/${m}/${y}`;
+  };
+  const nights = (a, b) => {
+    if (!a || !b) return 0;
+    return Math.max(0, Math.round((new Date(b) - new Date(a)) / 86400000));
+  };
+
+  // Fecha mínima = hoy
+  const today = new Date().toISOString().slice(0, 10);
+  form.querySelector('#f-in').min = today;
+  form.querySelector('#f-out').min = today;
+  form.querySelector('#f-in').addEventListener('change', e => {
+    form.querySelector('#f-out').min = e.target.value || today;
+  });
+
+  form.addEventListener('submit', (ev) => {
+    ev.preventDefault();
+    const d = new FormData(form);
+    const inD = d.get('in');
+    const outD = d.get('out');
+    const n = nights(inD, outD);
+    const parts = [
+      '¡Hola! Quiero consultar disponibilidad en Sauces de Sol.',
+      '',
+      inD ? `📅 Llegada: ${fmt(inD)}` : null,
+      outD ? `📅 Salida: ${fmt(outD)}${n ? ` (${n} noche${n>1?'s':''})` : ''}` : null,
+      `👥 Personas: ${d.get('people')}`,
+      d.get('pet') !== 'no' ? `🐾 Con mascota ${d.get('pet')}` : null,
+      d.get('name') ? `\nSoy ${d.get('name')}.` : null,
+      d.get('msg') ? `\n${d.get('msg')}` : null,
+    ].filter(Boolean);
+    const text = encodeURIComponent(parts.join('\n'));
+    window.open(`https://wa.me/5491161644964?text=${text}`, '_blank', 'noopener');
+  });
+})();
+
+// Lightbox
 const items = Array.from(document.querySelectorAll('.g-item'));
 const sources = items.map(i => i.dataset.src);
 const lb = document.getElementById('lightbox');
