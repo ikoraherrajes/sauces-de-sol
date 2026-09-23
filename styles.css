@@ -171,7 +171,7 @@ section{padding-block:clamp(76px,11vw,150px)}
   filter:drop-shadow(0 6px 30px rgba(0,0,0,.5));
 }
 .hero__logo{
-  width:min(720px, 88vw);
+  width:min(560px, 80vw);
   height:auto;display:block;
   animation:heroLogoIn 1s cubic-bezier(.2,.7,.3,1) both;
 }
