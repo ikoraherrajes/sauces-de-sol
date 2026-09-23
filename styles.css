@@ -154,6 +154,26 @@ section{padding-block:clamp(76px,11vw,150px)}
   display:flex;align-items:flex-end;overflow:hidden;
   color:var(--sobre);
 }
+.hero__inner--centered{
+  text-align:center;
+  padding-bottom:clamp(30px,5vw,50px);
+}
+.hero__inner--centered .lead{margin-left:auto;margin-right:auto}
+.hero__inner--centered .hero__actions{justify-content:center}
+.hero__logo-wrap{
+  margin:0;padding:0;
+  display:flex;justify-content:center;
+  filter:drop-shadow(0 6px 30px rgba(0,0,0,.5));
+}
+.hero__logo{
+  width:min(720px, 88vw);
+  height:auto;display:block;
+  animation:heroLogoIn 1s cubic-bezier(.2,.7,.3,1) both;
+}
+@keyframes heroLogoIn{
+  from{opacity:0;transform:translateY(20px) scale(.96)}
+  to{opacity:1;transform:none}
+}
 .hero__bg{position:absolute;inset:0;z-index:0;overflow:hidden}
 .hero__slide{
   position:absolute;inset:0;
