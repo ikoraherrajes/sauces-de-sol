@@ -131,7 +131,12 @@ section{padding-block:clamp(76px,11vw,150px)}
   backdrop-filter:blur(14px);
   color:var(--ink);
 }
-.brand{display:flex;align-items:center;gap:10px}
+.brand{
+  display:flex;align-items:center;gap:10px;
+  opacity:0;transform:translateY(-6px);pointer-events:none;
+  transition:opacity .4s ease, transform .4s ease;
+}
+.nav.solid .brand{opacity:1;transform:none;pointer-events:auto}
 .brand__logo{height:46px;width:auto;display:block}
 .brand__logo--dark{display:none}
 .nav.solid .brand__logo--light{display:none}
