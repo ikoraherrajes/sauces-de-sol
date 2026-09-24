@@ -183,7 +183,7 @@
 
   <!-- FILM / VIDEO ENTORNO -->
   <section class="film">
-    <video class="film__video" autoplay muted loop playsinline poster="assets/img/aerea-sierras.jpg">
+    <video class="film__video" id="filmVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="assets/img/aerea-sierras.jpg">
       <source src="assets/video/drone.mp4" type="video/mp4" />
     </video>
     <div class="film__caption reveal">
@@ -401,10 +401,15 @@
     <p class="footer__copy">© <span id="year"></span> Sauces de Sol · saucesdesol.com.ar</p>
   </footer>
 
-  <!-- WA FLOAT (mobile) -->
-  <a class="wa-float" href="https://wa.me/5491161644964?text=Hola!%20Quiero%20consultar%20disponibilidad%20en%20Sauces%20de%20Sol" target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">
-    <svg width="26" height="26"><use href="#i-wa"/></svg>
-  </a>
+  <!-- Flotantes: WhatsApp siempre, Subir aparece al scrollear -->
+  <div class="floaters">
+    <button type="button" class="fab fab--up" id="btnTop" aria-label="Volver arriba">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+    </button>
+    <a class="fab fab--wa" href="https://wa.me/5491161644964?text=Hola!%20Quiero%20consultar%20disponibilidad%20en%20Sauces%20de%20Sol" target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">
+      <svg width="28" height="28"><use href="#i-wa"/></svg>
+    </a>
+  </div>
 
   <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox" aria-hidden="true">

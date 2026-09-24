@@ -13,11 +13,19 @@ document.getElementById('year').textContent = new Date().getFullYear();
   }, 8500);
 })();
 
-// Nav solid state (fondo al hacer scroll, estilo Arroyo)
+// Nav solid + boton subir (aparecen despues de scrollear)
 const nav = document.getElementById('nav');
-const onScroll = () => nav.classList.toggle('solid', window.scrollY > 60);
+const btnTop = document.getElementById('btnTop');
+const onScroll = () => {
+  const y = window.scrollY;
+  nav.classList.toggle('solid', y > 60);
+  if (btnTop) btnTop.classList.toggle('show', y > 400);
+};
 onScroll();
 window.addEventListener('scroll', onScroll, { passive: true });
+if (btnTop) btnTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 
 // Menú móvil
 const toggle = document.getElementById('navToggle');
@@ -42,6 +50,34 @@ const io = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.12 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// Forzar autoplay del video del entorno en mobile (iOS/Android a veces lo bloquean)
+(function(){
+  const vids = document.querySelectorAll('video[autoplay]');
+  vids.forEach(v => {
+    v.muted = true;                    // requerido en iOS para autoplay
+    v.setAttribute('muted', '');
+    v.setAttribute('playsinline', '');
+    const tryPlay = () => {
+      const p = v.play();
+      if (p && p.catch) p.catch(() => {/* ignora rejection, se reintenta */});
+    };
+    // Reintentar al cargar, al entrar en viewport y al primer touch
+    v.addEventListener('loadeddata', tryPlay);
+    tryPlay();
+    const vio = new IntersectionObserver(es => {
+      es.forEach(e => { if (e.isIntersecting) tryPlay(); });
+    }, { threshold: 0.15 });
+    vio.observe(v);
+    const once = () => {
+      tryPlay();
+      document.removeEventListener('touchstart', once);
+      document.removeEventListener('click', once);
+    };
+    document.addEventListener('touchstart', once, { passive: true });
+    document.addEventListener('click', once);
+  });
+})();
 
 // Formulario -> WhatsApp
 (function(){
